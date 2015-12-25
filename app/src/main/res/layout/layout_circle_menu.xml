@@ -1,31 +1,31 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@drawable/bg"
-              android:gravity="center_vertical"
-              android:orientation="horizontal">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@drawable/bg"
+             android:gravity="center"
+             android:orientation="horizontal">
 
     <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/turnplate_bg_new_left">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center|left">
 
         <com.haikuowuya.zhsq.view.CircleMenu
             android:id="@+id/cm_circle_menu"
-            android:layout_width="240dp"
-            android:layout_height="240dp"
-            android:layout_gravity="center">
-
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-160dp">
         </com.haikuowuya.zhsq.view.CircleMenu>
     </FrameLayout>
 
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1.0"
+        android:layout_gravity="right|center"
         android:background="@drawable/turnplate_bg_left"
-        android:gravity="center"
+        android:gravity="center|right"
         android:orientation="vertical">
 
         <TextView
@@ -41,9 +41,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:gravity="center"
-            android:text="贴心的银行服务，带给您更安全便捷的智能金融体验。"
+            android:text="贴心的银行服务，\n带给您更安全\n便捷的智能金融体验。"
             android:textColor="#ffffff"
             android:textSize="13.5dip"/>
     </LinearLayout>
 
-</LinearLayout>
+</FrameLayout>

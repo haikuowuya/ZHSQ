@@ -52,7 +52,7 @@ public class CircleMenu extends ViewGroup
     // Settings of the ViewGroup
     private int speed = 25;
     private float angle = 90;
-    private FirstChildLocation firstChildPosition = FirstChildLocation.South;
+    private FirstChildLocation firstChildPosition = FirstChildLocation.East;
     private boolean isRotating = true;
 
     private MenuItem tappedView = null;
@@ -176,13 +176,17 @@ public class CircleMenu extends ViewGroup
         return (selected >= 0) ? (MenuItem) getChildAt(selected) : null;
     }
 
+    public void setSelectedPosition(int position)
+    {
+        selected = position;
+    }
+
     @Override
     protected void onDraw(Canvas canvas)
     {
         // The sizes of the ViewGroup
         circleHeight = getHeight();
         circleWidth = getWidth();
-
         if (centerImage != null)
         {
             // Scaling the size of the center image
@@ -190,10 +194,8 @@ public class CircleMenu extends ViewGroup
             {
                 float sx = (((radius + childWidth / 4) * 2) / (float) centerImage.getWidth());
                 float sy = (((radius + childWidth / 4) * 2) / (float) centerImage.getHeight());
-
                 matrix = new Matrix();
                 matrix.postScale(sx, sy);
-
                 int wh = DensityUtils.dpToPx(getContext(), iconSize);
                 imageScaled = Bitmap.createBitmap(scale(centerImage, wh, wh), 0, 0, wh, wh, matrix, false);
             }
@@ -203,7 +205,6 @@ public class CircleMenu extends ViewGroup
                 // Move the background to the center
                 int cx = (circleWidth - imageScaled.getWidth()) / 2;
                 int cy = (circleHeight - imageScaled.getHeight()) / 2;
-
                 Canvas g = canvas;
                 canvas.rotate(0, circleWidth / 2, circleHeight / 2);
                 g.drawBitmap(imageScaled, cx, cy, null);
@@ -277,7 +278,6 @@ public class CircleMenu extends ViewGroup
             {
                 continue;
             }
-
             if (angle > 360)
             {
                 angle -= 360;
@@ -288,13 +288,10 @@ public class CircleMenu extends ViewGroup
                     angle += 360;
                 }
             }
-
             child.setAngle(angle);
             child.setPosition(i);
-
             left = Math.round((float) (((layoutWidth / 2) - childWidth / 2) + radius * Math.cos(Math.toRadians(angle))));
             top = Math.round((float) (((layoutHeight / 2) - childHeight / 2) + radius * Math.sin(Math.toRadians(angle))));
-
             child.layout(left, top, left + childWidth, top + childHeight);
             angle += angleDelay;
         }
@@ -574,6 +571,7 @@ public class CircleMenu extends ViewGroup
         public boolean onSingleTapUp(MotionEvent e)
         {
             int tappedViewsPosition = pointToPosition(e.getX(), e.getY());
+            System.out.println("tappedViewsPosition = " + tappedViewsPosition);
             if (tappedViewsPosition >= 0)
             {
                 tappedView = (MenuItem) getChildAt(tappedViewsPosition);
@@ -639,7 +637,6 @@ public class CircleMenu extends ViewGroup
     public enum FirstChildLocation
     {
         East(0), South(90), West(180), North(270);
-
         private float value;
 
         FirstChildLocation(float position)
