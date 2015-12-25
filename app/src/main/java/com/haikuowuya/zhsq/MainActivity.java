@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.haikuowuya.core.base.BaseHKWYActivity;
 import com.haikuowuya.core.base.BaseHKWYFragment;
 import com.haikuowuya.core.base.BaseHKWYSlidingMenuActivity;
 import com.haikuowuya.core.slidingmenu.SlidingMenu;
@@ -14,8 +15,16 @@ import com.haikuowuya.zhsq.fragment.MenuFragment;
 
 public class MainActivity extends BaseHKWYSlidingMenuActivity
 {
-
     private MenuFragment mMenuFragment;
+
+    public static  void  actionMain(BaseHKWYActivity activity)
+    {
+        Intent intent = new Intent(activity, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        activity.startActivity(intent);
+        activity.finish();
+    }
+
 
     @Override
     public BaseHKWYFragment fragmentAsView()
@@ -42,6 +51,17 @@ public class MainActivity extends BaseHKWYSlidingMenuActivity
         super.afterOnCreate(savedInstanceState);
         mSlidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
         initBack();
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        if(mSlidingMenu.isMenuShowing())
+        {
+            mSlidingMenu.showContent();
+            return;
+        }
+        super.onBackPressed();
     }
 
     /***
