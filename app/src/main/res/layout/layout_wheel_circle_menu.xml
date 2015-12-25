@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/bg"
+              android:gravity="center_vertical"
+              android:orientation="horizontal">
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/turnplate_bg_new_left">
+
+        <com.lukedeighton.wheelview.WheelView
+            android:id="@+id/wv_wheel_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:repeatItems="true"
+            app:rotatableWheelDrawable="true"
+            app:selectionAngle="45.0"
+            app:wheelColor="#FF444444"
+            app:wheelItemCount="3"
+            app:wheelItemRadius="4dp"
+            app:wheelOffsetX="40dp"
+            app:wheelOffsetY="0dp"
+            app:wheelPosition="left"
+            app:wheelRadius="150dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:background="@drawable/turnplate_bg_left"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="手机银行"
+            android:textColor="#ffffff"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="贴心的银行服务，带给您更安全便捷的智能金融体验。"
+
+            android:textColor="#ffffff"
+            android:textSize="13.5dip"/>
+    </LinearLayout>
+
+</LinearLayout>

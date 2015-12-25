@@ -1,0 +1,8 @@
+<resources>
+    <style name="AppTheme" parent="HKWY.Light">
+        <item name="android:background">#00000000</item>
+        <!--标题栏的高度-->
+        <item name="title_bar_height">?android:actionBarSize</item>
+        <item name="colorPrimary">@color/color_main_color</item>
+    </style>
+</resources>
