@@ -51,7 +51,7 @@ public class CircleMenu extends ViewGroup
     private boolean[] quadrantTouched;
     // Settings of the ViewGroup
     private int speed = 25;
-    private float angle = 90;
+    private float angle = 70;
     private FirstChildLocation firstChildPosition = FirstChildLocation.East;
     private boolean isRotating = true;
 
