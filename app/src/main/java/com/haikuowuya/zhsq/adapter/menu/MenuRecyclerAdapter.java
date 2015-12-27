@@ -4,7 +4,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.haikuowuya.core.base.BaseHKWYActivity;
@@ -55,7 +54,6 @@ public class MenuRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             final MenuItem menuItem = mItemList.get(position);
             final ListItemVH listItemVH = (ListItemVH) holder;
             listItemVH.mTvText.setText(menuItem.text);
-            listItemVH.mImageView.setImageResource(menuItem.resIcon);
             listItemVH.mItemView.setOnClickListener(new View.OnClickListener()
             {
                 @Override
@@ -79,14 +77,12 @@ public class MenuRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public static final class ListItemVH extends RecyclerView.ViewHolder
     {
         private View mItemView;
-        private ImageView mImageView;
         private TextView mTvText;
 
         public ListItemVH(View itemView)
         {
             super(itemView);
             mItemView = itemView;
-            mImageView = (ImageView) itemView.findViewById(R.id.iv_image);
             mTvText = (TextView) itemView.findViewById(R.id.tv_text);
 
         }

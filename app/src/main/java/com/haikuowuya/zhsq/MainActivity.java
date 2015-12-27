@@ -3,12 +3,15 @@ package com.haikuowuya.zhsq;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.haikuowuya.core.base.BaseHKWYActivity;
 import com.haikuowuya.core.base.BaseHKWYFragment;
 import com.haikuowuya.core.base.BaseHKWYSlidingMenuActivity;
 import com.haikuowuya.core.slidingmenu.SlidingMenu;
+import com.haikuowuya.core.util.DensityUtils;
 import com.haikuowuya.core.util.ViewUtils;
 import com.haikuowuya.zhsq.fragment.MainFragment;
 import com.haikuowuya.zhsq.fragment.MenuFragment;
@@ -17,14 +20,13 @@ public class MainActivity extends BaseHKWYSlidingMenuActivity
 {
     private MenuFragment mMenuFragment;
 
-    public static  void  actionMain(BaseHKWYActivity activity)
+    public static void actionMain(BaseHKWYActivity activity)
     {
         Intent intent = new Intent(activity, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         activity.startActivity(intent);
         activity.finish();
     }
-
 
     @Override
     public BaseHKWYFragment fragmentAsView()
@@ -35,7 +37,7 @@ public class MainActivity extends BaseHKWYSlidingMenuActivity
     @Override
     public CharSequence getActivityTitle()
     {
-        return "首页";
+        return "";
     }
 
     @Override
@@ -51,12 +53,14 @@ public class MainActivity extends BaseHKWYSlidingMenuActivity
         super.afterOnCreate(savedInstanceState);
         mSlidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
         initBack();
+        initCenter();
+        initRight();
     }
 
     @Override
     public void onBackPressed()
     {
-        if(mSlidingMenu.isMenuShowing())
+        if (mSlidingMenu.isMenuShowing())
         {
             mSlidingMenu.showContent();
             return;
@@ -79,6 +83,39 @@ public class MainActivity extends BaseHKWYSlidingMenuActivity
             public void onClick(View v)
             {
                 mSlidingMenu.toggle();
+            }
+        });
+    }
+     private void initCenter()
+     {
+         RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relative_title_container);
+         ImageView imageView = new ImageView(mActivity);
+         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
+         layoutParams.alignWithParent = true;
+         layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
+         layoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
+         layoutParams.addRule(RelativeLayout.LEFT_OF, R.id.iv_right);
+         layoutParams.addRule(RelativeLayout.RIGHT_OF, R.id.iv_back);
+         imageView.setImageResource(R.mipmap.ic_nav_logo);
+         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+         int paddingLRTB = DensityUtils.dpToPx(mActivity, 8);
+         imageView.setPadding(paddingLRTB, paddingLRTB, paddingLRTB, paddingLRTB);
+         relativeLayout.addView(imageView, layoutParams);
+
+     }
+    private void initRight()
+    {
+        ImageView ivRight = (ImageView) findViewById(R.id.iv_right);
+        ivRight.setVisibility(View.VISIBLE);
+        ivRight.setImageResource(R.mipmap.ic_title_user);
+        int padding = ViewUtils.getActionBarHeight(mActivity) / 4;
+        ivRight.setPadding(padding, padding, padding, padding);
+        ivRight.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                mActivity.showToast("用户");
             }
         });
     }

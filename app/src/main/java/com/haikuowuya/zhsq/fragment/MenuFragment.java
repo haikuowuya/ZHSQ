@@ -10,14 +10,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ImageView;
 
 import com.haikuowuya.core.util.PhotoUtils;
 import com.haikuowuya.zhsq.R;
+import com.haikuowuya.zhsq.adapter.menu.MenuGridAdapter;
 import com.haikuowuya.zhsq.adapter.menu.MenuRecyclerAdapter;
 import com.haikuowuya.zhsq.base.BaseFragment;
 
 import java.util.LinkedList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -37,6 +40,8 @@ public class MenuFragment extends BaseFragment
     RecyclerView mRecyclerView;
     @Bind(R.id.iv_photo)
     ImageView mImageView;
+    @Bind(R.id.gv_gridview)
+    GridView mGridView;
 
     @Nullable
     @Override
@@ -52,6 +57,20 @@ public class MenuFragment extends BaseFragment
         super.onActivityCreated(savedInstanceState);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
         mRecyclerView.setAdapter(new MenuRecyclerAdapter(mActivity, genMockData()));
+        mGridView.setAdapter(new MenuGridAdapter(mActivity,genGridData()));
+    }
+
+    private List<MenuGridAdapter.TextIconItem> genGridData()
+    {
+        LinkedList<MenuGridAdapter.TextIconItem> iconItems = new LinkedList<>();
+        MenuGridAdapter.TextIconItem textIconItemHome = new MenuGridAdapter.TextIconItem(R.mipmap.ic_menu_home,"首页");
+        MenuGridAdapter.TextIconItem textIconItemMsg = new MenuGridAdapter.TextIconItem(R.mipmap.ic_menu_msg,"通知");
+        MenuGridAdapter.TextIconItem textIconItemSettings = new MenuGridAdapter.TextIconItem(R.mipmap.ic_menu_settings,"设置");
+        iconItems.add(textIconItemHome);
+        iconItems.add(textIconItemMsg);
+        iconItems.add(textIconItemSettings);
+        return  iconItems;
+
     }
 
     /**
@@ -72,12 +91,10 @@ public class MenuFragment extends BaseFragment
     private LinkedList<MenuRecyclerAdapter.MenuItem> genMockData()
     {
         LinkedList<MenuRecyclerAdapter.MenuItem> items = new LinkedList<>();
-        items.add(new MenuRecyclerAdapter.MenuItem(R.mipmap.ic_launcher, "精选"));
-        items.add(new MenuRecyclerAdapter.MenuItem(R.mipmap.ic_launcher, "商品"));
-        items.add(new MenuRecyclerAdapter.MenuItem(R.mipmap.ic_launcher, "付款"));
-        items.add(new MenuRecyclerAdapter.MenuItem(R.mipmap.ic_launcher, "社区"));
-        items.add(new MenuRecyclerAdapter.MenuItem(R.mipmap.ic_launcher, "免费电话"));
-        items.add(new MenuRecyclerAdapter.MenuItem(R.mipmap.ic_launcher, "关于本店"));
+        items.add(new MenuRecyclerAdapter.MenuItem(R.mipmap.ic_launcher, "个人信息"));
+        items.add(new MenuRecyclerAdapter.MenuItem(R.mipmap.ic_launcher, "商品订单"));
+        items.add(new MenuRecyclerAdapter.MenuItem(R.mipmap.ic_launcher, "关于我们"));
+        items.add(new MenuRecyclerAdapter.MenuItem(R.mipmap.ic_launcher, "欢迎页面"));
         return items;
     }
 

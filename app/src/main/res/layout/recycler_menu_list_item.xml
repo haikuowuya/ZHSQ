@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="72dp"
-    android:layout_gravity="center"
-    android:gravity="center_vertical"
-    android:orientation="horizontal"
-    android:paddingLeft="20dp"
-
-    tools:background="#FF000000">
-
-    <ImageView
-        android:id="@+id/iv_image"
-        android:layout_width="64dp"
-        android:layout_height="match_parent"
-        android:padding="10dp"
-        android:scaleType="fitEnd"/>
+    android:layout_height="wrap_content"
+    android:background="#FF2D3E50"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/tv_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
         android:layout_gravity="center_vertical"
-        android:layout_weight="1"
+        android:drawableRight="@mipmap/ic_menu_arrow"
         android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="25dp"
         android:textColor="#FFFFFFFF"
-        android:textSize="18sp"
+        android:textSize="15sp"
         tools:text="精选"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#FF344860"/>
 </LinearLayout>

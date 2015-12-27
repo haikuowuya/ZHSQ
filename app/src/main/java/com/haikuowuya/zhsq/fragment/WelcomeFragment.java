@@ -13,9 +13,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.haikuowuya.core.base.BaseHKWYFragment;
+import com.haikuowuya.core.util.DensityUtils;
 import com.haikuowuya.zhsq.MainActivity;
 import com.haikuowuya.zhsq.R;
 import com.haikuowuya.zhsq.base.BaseFragment;
+import com.haikuowuya.zhsq.view.CirclePageIndicator;
 
 import butterknife.Bind;
 
@@ -32,6 +34,8 @@ public class WelcomeFragment extends BaseFragment
 
     @Bind(R.id.vp_viewpager)
     ViewPager mViewPager;
+    @Bind(R.id.cpi_indicator)
+    CirclePageIndicator mCirclePageIndicator;
 
     @Nullable
     @Override
@@ -46,6 +50,28 @@ public class WelcomeFragment extends BaseFragment
     {
         super.onActivityCreated(savedInstanceState);
         mViewPager.setAdapter(new WelcomeFragmentPagerAdapter(getChildFragmentManager()) );
+        mCirclePageIndicator.setRadius(DensityUtils.dpToPx(mActivity,5.5f));
+        mCirclePageIndicator.setViewPager(mViewPager);
+        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener()
+        {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels)
+            {
+
+            }
+
+            @Override
+            public void onPageSelected(int position)
+            {
+                mCirclePageIndicator.setCurrentItem(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state)
+            {
+
+            }
+        });
     }
 
 
@@ -112,7 +138,7 @@ public class WelcomeFragment extends BaseFragment
             {
                 case 0:
                     mImageView.setImageResource(R.mipmap.ic_welcome_0);
-                    mImageView.setBackgroundColor(0xFF278DD0);
+                    mImageView.setBackgroundColor(0xFF9B58B5);
                     break;
                 case 1:
                     mImageView.setImageResource(R.mipmap.ic_welcome_1);
@@ -121,7 +147,7 @@ public class WelcomeFragment extends BaseFragment
                     break;
                 case 2:
                     mImageView.setImageResource(R.mipmap.ic_welcome_2);
-                    mImageView.setBackgroundColor(0xFF9B58B5);
+                    mImageView.setBackgroundColor(0xFF278DD0);
                     mTvStart.setVisibility(View.VISIBLE);
                     mTvStart.setOnClickListener(new View.OnClickListener()
                     {
