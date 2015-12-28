@@ -220,15 +220,12 @@ public class RequestUtils
         {
             public void onResponse(Object response)
             {
-                final String result = (response != null) ? response.toString() : null;
+                final String result = handlerResponseResult(response);
                 if (isShowProgressDialog)
                 {
                     activity.dismissProgressDialog();
                 }
-                if (DebugUtils.isShowDebug(activity))
-                {
-                    System.out.println("结果数据 = 【 " + result + " 】");
-                }
+
                 dataView.onGetDataSuccess(result, requestTag);
             }
         };
@@ -288,6 +285,8 @@ public class RequestUtils
     private static String handlerResponseResult(Object response)
     {
         String result = (response != null) ? response.toString() : null;
+        System.out.println("结果数据 = 【 " + result + " 】");
+
         if (!TextUtils.isEmpty(result))
         {
             result = result.replaceAll("\r\n", "");
