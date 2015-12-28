@@ -5,10 +5,12 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.haikuowuya.core.util.DensityUtils;
+import com.haikuowuya.zhsq.KuaiDiActivity;
 import com.haikuowuya.zhsq.R;
 import com.haikuowuya.zhsq.adapter.main.MainGridAdapter;
 import com.haikuowuya.zhsq.base.BaseFragment;
@@ -35,7 +37,7 @@ public class MainFragment extends BaseFragment
     CircleMenu mCircleMenu;
     @Bind(R.id.gv_gridview)
     GridView mGridView;
-    private String[] mItemTexts = new String[]{"安全中心 ", "特色服务", "投资理财", "特色服务", "安全中心 "};
+    private String[] mItemTexts = new String[]{"安全中心 ", "特色服务", "投资理财", "安全中心 ", "特色服务"};
     private int[] mItemImgs = new int[]{R.drawable.home_mbank_1_normal, R.drawable.home_mbank_2_normal, R.drawable.home_mbank_3_normal, R.drawable.home_mbank_2_normal, R.drawable.home_mbank_1_normal};
 
     @Nullable
@@ -78,13 +80,33 @@ public class MainFragment extends BaseFragment
     private void setGridView()
     {
         mGridView.setNumColumns(4);
-        mGridView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        mGridView.setHorizontalSpacing(DensityUtils.dpToPx(mActivity,1.f));
         mGridView.setAdapter(new MainGridAdapter(mActivity,genGridData()));
+        mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                if (position == 0)
+                {
+                    KuaiDiActivity.actionKuaiDi(mActivity);
+                } else if (position == 1)
+                {
+
+                } else if (position == 2)
+                {
+
+                }
+                else if(position ==3)
+                {
+
+                }
+            }
+        });
     }
 
     private List<MainGridAdapter.TextIconItem> genGridData()
     {
-
         LinkedList<MainGridAdapter.TextIconItem> iconItems = new LinkedList<>();
         iconItems.add(new MainGridAdapter.TextIconItem(R.mipmap.ic_main_kuaidi,"快递"));
         iconItems.add(new MainGridAdapter.TextIconItem(R.mipmap.ic_main_yuding,"预定"));

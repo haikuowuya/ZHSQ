@@ -2,13 +2,13 @@
   <library name="core-1.1.7">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.haikuowuya/core/1.1.7/jars/libs/open_sdk_r5509.jar!/" />
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.haikuowuya/core/1.1.7/jars/classes.jar!/" />
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.haikuowuya/core/1.1.7/jars/libs/weibosdkcore.jar!/" />
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.haikuowuya/core/1.1.7/jars/libs/org.apache.http.legacy.jar!/" />
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.haikuowuya/core/1.1.7/jars/libs/libammsdk.jar!/" />
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.haikuowuya/core/1.1.7/jars/libs/yixin_thridpart_app_sdk_v2.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.haikuowuya/core/1.1.7/jars/libs/mta-sdk-1.6.2.jar!/" />
       <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.haikuowuya/core/1.1.7/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.haikuowuya/core/1.1.7/jars/libs/libammsdk.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.haikuowuya/core/1.1.7/jars/libs/org.apache.http.legacy.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.haikuowuya/core/1.1.7/jars/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.haikuowuya/core/1.1.7/jars/libs/yixin_thridpart_app_sdk_v2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.haikuowuya/core/1.1.7/jars/libs/weibosdkcore.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.haikuowuya/core/1.1.7/jars/libs/mta-sdk-1.6.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
