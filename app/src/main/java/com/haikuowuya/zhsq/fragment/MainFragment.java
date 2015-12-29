@@ -10,8 +10,11 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.haikuowuya.core.util.DensityUtils;
+import com.haikuowuya.zhsq.GameActivity;
 import com.haikuowuya.zhsq.KuaiDiActivity;
 import com.haikuowuya.zhsq.R;
+import com.haikuowuya.zhsq.SettingsActivity;
+import com.haikuowuya.zhsq.YuDingActivity;
 import com.haikuowuya.zhsq.adapter.main.MainGridAdapter;
 import com.haikuowuya.zhsq.base.BaseFragment;
 import com.haikuowuya.zhsq.view.CircleMenu;
@@ -80,8 +83,8 @@ public class MainFragment extends BaseFragment
     private void setGridView()
     {
         mGridView.setNumColumns(4);
-        mGridView.setHorizontalSpacing(DensityUtils.dpToPx(mActivity,1.f));
-        mGridView.setAdapter(new MainGridAdapter(mActivity,genGridData()));
+        mGridView.setHorizontalSpacing(DensityUtils.dpToPx(mActivity, 1.f));
+        mGridView.setAdapter(new MainGridAdapter(mActivity, genGridData()));
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
@@ -92,14 +95,13 @@ public class MainFragment extends BaseFragment
                     KuaiDiActivity.actionKuaiDi(mActivity);
                 } else if (position == 1)
                 {
-
+                    YuDingActivity.actionYuDing(mActivity);
                 } else if (position == 2)
                 {
-
-                }
-                else if(position ==3)
+                    GameActivity.actionGame(mActivity);
+                } else if (position == 3)
                 {
-
+                    SettingsActivity.actionSettings(mActivity);
                 }
             }
         });
@@ -108,11 +110,11 @@ public class MainFragment extends BaseFragment
     private List<MainGridAdapter.TextIconItem> genGridData()
     {
         LinkedList<MainGridAdapter.TextIconItem> iconItems = new LinkedList<>();
-        iconItems.add(new MainGridAdapter.TextIconItem(R.mipmap.ic_main_kuaidi,"快递"));
-        iconItems.add(new MainGridAdapter.TextIconItem(R.mipmap.ic_main_yuding,"预定"));
-        iconItems.add(new MainGridAdapter.TextIconItem(R.mipmap.ic_main_game,"游戏"));
-        iconItems.add(new MainGridAdapter.TextIconItem(R.mipmap.ic_main_settings,"设置"));
-        return  iconItems;
+        iconItems.add(new MainGridAdapter.TextIconItem(R.mipmap.ic_main_kuaidi, "快递"));
+        iconItems.add(new MainGridAdapter.TextIconItem(R.mipmap.ic_main_yuding, "预定"));
+        iconItems.add(new MainGridAdapter.TextIconItem(R.mipmap.ic_main_game, "游戏"));
+        iconItems.add(new MainGridAdapter.TextIconItem(R.mipmap.ic_main_settings, "设置"));
+        return iconItems;
     }
 
     @Override

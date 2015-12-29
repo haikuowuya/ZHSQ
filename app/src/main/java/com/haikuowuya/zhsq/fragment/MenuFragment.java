@@ -10,11 +10,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 
 import com.haikuowuya.core.util.PhotoUtils;
 import com.haikuowuya.zhsq.R;
+import com.haikuowuya.zhsq.SettingsActivity;
 import com.haikuowuya.zhsq.adapter.menu.MenuGridAdapter;
 import com.haikuowuya.zhsq.adapter.menu.MenuRecyclerAdapter;
 import com.haikuowuya.zhsq.base.BaseFragment;
@@ -57,19 +59,29 @@ public class MenuFragment extends BaseFragment
         super.onActivityCreated(savedInstanceState);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
         mRecyclerView.setAdapter(new MenuRecyclerAdapter(mActivity, genMockData()));
-        mGridView.setAdapter(new MenuGridAdapter(mActivity,genGridData()));
+        mGridView.setAdapter(new MenuGridAdapter(mActivity, genGridData()));
+        mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                if (position == 2)
+                {
+                    SettingsActivity.actionSettings(mActivity);
+                }
+            }
+        });
     }
 
     private List<MenuGridAdapter.TextIconItem> genGridData()
     {
         LinkedList<MenuGridAdapter.TextIconItem> iconItems = new LinkedList<>();
-        MenuGridAdapter.TextIconItem textIconItemHome = new MenuGridAdapter.TextIconItem(R.mipmap.ic_menu_home,"首页");
-        MenuGridAdapter.TextIconItem textIconItemMsg = new MenuGridAdapter.TextIconItem(R.mipmap.ic_menu_msg,"通知");
-        MenuGridAdapter.TextIconItem textIconItemSettings = new MenuGridAdapter.TextIconItem(R.mipmap.ic_menu_settings,"设置");
+        MenuGridAdapter.TextIconItem textIconItemHome = new MenuGridAdapter.TextIconItem(R.mipmap.ic_menu_home, "首页");
+        MenuGridAdapter.TextIconItem textIconItemMsg = new MenuGridAdapter.TextIconItem(R.mipmap.ic_menu_msg, "通知");
+        MenuGridAdapter.TextIconItem textIconItemSettings = new MenuGridAdapter.TextIconItem(R.mipmap.ic_menu_settings, "设置");
         iconItems.add(textIconItemHome);
         iconItems.add(textIconItemMsg);
         iconItems.add(textIconItemSettings);
-        return  iconItems;
+        return iconItems;
 
     }
 

@@ -1,4 +1,7 @@
 <resources>
     <string name="activity_welcome_title">引导页</string>
     <string name="activity_kuaidi">""</string>
+    <string name="activity_yuding">""</string>
+    <string name="activity_settings">""</string>
+    <string name="activity_game">""</string>
 </resources>

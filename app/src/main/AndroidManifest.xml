@@ -4,28 +4,38 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:theme="@style/Theme.Welcome"
             android:name=".WelcomeActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
-            android:launchMode="singleTask"
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:launchMode="singleTask">
 
         </activity>
-        <activity android:name=".KuaiDiActivity"
-                  android:label="@string/activity_kuaidi"/>
+        <activity
+            android:name=".KuaiDiActivity"
+            android:label="@string/activity_kuaidi"/>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/activity_settings"/>
+        <activity
+            android:name=".YuDingActivity"
+            android:label="@string/activity_yuding"/>
+        <activity android:name=".GameActivity"
+                  android:label="@string/activity_game"/>
     </application>
 
 </manifest>

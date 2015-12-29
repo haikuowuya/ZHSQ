@@ -9,7 +9,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.haikuowuya.core.base.BaseHKWYActivity;
 import com.haikuowuya.core.mvp.view.DataView;
-import com.haikuowuya.core.util.DebugUtils;
 
 import org.apache.http.protocol.HTTP;
 
@@ -69,10 +68,6 @@ public class RequestUtils
                 {
                     activity.dismissProgressDialog();
                 }
-                if (DebugUtils.isShowDebug(activity))
-                {
-                    System.out.println("结果数据 = 【 " + result + " 】");
-                }
                 dataView.onGetDataSuccess(result, requestTag);
             }
         };
@@ -94,11 +89,7 @@ public class RequestUtils
                 HashMap<String, String> headerMap = new HashMap<>();
                 if (isNeedAccessToken)
                 {
-//                    String accessTokenItem = activity.getAccessTokenItem();
-//                    if (null != accessTokenItem && !StringUtils.isEmpty(accessTokenItem))
-//                    {
-//                        headerMap.put("Authorization", "Bearer " + accessTokenItem);
-//                    }
+//
                 }
                 return headerMap;
             }
@@ -142,10 +133,7 @@ public class RequestUtils
                 {
                     activity.dismissProgressDialog();
                 }
-                if (DebugUtils.isShowDebug(activity))
-                {
-                    System.out.println("结果数据 = 【 " + result + " 】");
-                }
+
                 dataView.onGetDataSuccess(result, requestTag);
             }
         };
@@ -185,12 +173,6 @@ public class RequestUtils
                 HashMap<String, String> headerMap = new HashMap<>();
                 if (needToken)
                 {
-//                    String accessTokenItem = activity.getAccessTokenItem();
-//                    if (null != accessTokenItem && !StringUtils.isEmpty(accessTokenItem))
-//                    {
-//                        headerMap.put("Authorization", "Bearer " + accessTokenItem);
-//                           System.out.println("Bearer = " + accessTokenItem);
-//                    }
                 }
                 return headerMap;
             }
@@ -261,16 +243,10 @@ public class RequestUtils
             public Map<String, String> getHeaders() throws AuthFailureError
             {
                 //POST请求添加的头信息
-
                 HashMap<String, String> headerMap = new HashMap<>();
                 if (needToken)
                 {
-//                    String accessTokenItem = activity.getAccessTokenItem();
-//                    if (null != accessTokenItem && !StringUtils.isEmpty(accessTokenItem))
-//                    {
-//                        headerMap.put("Authorization", "Bearer " + accessTokenItem);
-//                        System.out.println("Bearer = " + accessTokenItem);
-//                    }
+
                 }
                 return headerMap;
             }
@@ -286,7 +262,6 @@ public class RequestUtils
     {
         String result = (response != null) ? response.toString() : null;
         System.out.println("结果数据 = 【 " + result + " 】");
-
         if (!TextUtils.isEmpty(result))
         {
             result = result.replaceAll("\r\n", "");

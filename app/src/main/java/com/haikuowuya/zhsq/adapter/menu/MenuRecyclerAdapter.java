@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.haikuowuya.core.base.BaseHKWYActivity;
 import com.haikuowuya.zhsq.R;
+import com.haikuowuya.zhsq.WelcomeActivity;
 import com.haikuowuya.zhsq.base.BaseItem;
 
 import java.util.List;
@@ -47,7 +48,7 @@ public class MenuRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position)
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position)
     {
         if (holder instanceof ListItemVH)
         {
@@ -56,12 +57,15 @@ public class MenuRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             listItemVH.mTvText.setText(menuItem.text);
             listItemVH.mItemView.setOnClickListener(new View.OnClickListener()
             {
-                @Override
                 public void onClick(View v)
                 {
                     if (null != mOnRecyclerItemClickListener)
                     {
                         mOnRecyclerItemClickListener.onItemClick(v, menuItem);
+                    }
+                    if (position == 3)
+                    {
+                        WelcomeActivity.actionWelcome(mActivity);
                     }
                 }
             });

@@ -10,4 +10,6 @@ public class Pref
         throw new RuntimeException("Pref类不可以实例化");
     }
 
+    public  static  final  String PREF_FIRST_RUN="first_run";
+
 }

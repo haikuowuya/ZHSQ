@@ -24,11 +24,11 @@ import butterknife.Bind;
 /**
  * Created by Steven on 2015/12/28 0028.
  */
-public class KuaiDiFragment extends BaseFragment implements DataView
+public class GameFragment extends BaseFragment implements DataView
 {
-    public static KuaiDiFragment newInstance()
+    public static GameFragment newInstance()
     {
-        KuaiDiFragment fragment = new KuaiDiFragment();
+        GameFragment fragment = new GameFragment();
         return fragment;
     }
 
@@ -39,7 +39,7 @@ public class KuaiDiFragment extends BaseFragment implements DataView
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-        return inflater.inflate(R.layout.fragment_kuaidi, null);   //TODO
+        return inflater.inflate(R.layout.fragment_game, null);
     }
 
     @Override

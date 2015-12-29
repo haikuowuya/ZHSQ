@@ -22,17 +22,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+
         android:gravity="center"
         android:orientation="vertical"
         tools:layout_height="60dp">
 
         <include layout="@layout/layout_gridview"/>
     </LinearLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:scaleType="fitXY"
-        android:src="@mipmap/ic_ad_banner"/>
 </LinearLayout>
 

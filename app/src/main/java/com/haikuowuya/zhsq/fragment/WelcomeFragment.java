@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.haikuowuya.core.base.BaseHKWYFragment;
 import com.haikuowuya.core.util.DensityUtils;
 import com.haikuowuya.zhsq.MainActivity;
+import com.haikuowuya.zhsq.Pref;
 import com.haikuowuya.zhsq.R;
 import com.haikuowuya.zhsq.base.BaseFragment;
 import com.haikuowuya.zhsq.view.CirclePageIndicator;
@@ -49,8 +50,8 @@ public class WelcomeFragment extends BaseFragment
     public void onActivityCreated(@Nullable Bundle savedInstanceState)
     {
         super.onActivityCreated(savedInstanceState);
-        mViewPager.setAdapter(new WelcomeFragmentPagerAdapter(getChildFragmentManager()) );
-        mCirclePageIndicator.setRadius(DensityUtils.dpToPx(mActivity,5.5f));
+        mViewPager.setAdapter(new WelcomeFragmentPagerAdapter(getChildFragmentManager()));
+        mCirclePageIndicator.setRadius(DensityUtils.dpToPx(mActivity, 5.5f));
         mCirclePageIndicator.setViewPager(mViewPager);
         mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener()
         {
@@ -74,18 +75,19 @@ public class WelcomeFragment extends BaseFragment
         });
     }
 
-
     @Override
     public String getFragmentTitle()
     {
         return "菜单";
     }
-    public  static  class  WelcomeFragmentPagerAdapter extends FragmentPagerAdapter
+
+    public static class WelcomeFragmentPagerAdapter extends FragmentPagerAdapter
     {
         public WelcomeFragmentPagerAdapter(FragmentManager fm)
         {
             super(fm);
         }
+
         @Override
         public Fragment getItem(int position)
         {
@@ -98,16 +100,18 @@ public class WelcomeFragment extends BaseFragment
             return 3;
         }
     }
-    public  static  class  FragmentItem extends BaseHKWYFragment
+
+    public static class FragmentItem extends BaseHKWYFragment
     {
-        public static final String ARG_POSITION="position";
-        public  static  FragmentItem newInstance(int position)
+        public static final String ARG_POSITION = "position";
+
+        public static FragmentItem newInstance(int position)
         {
-            FragmentItem fragmentItem =new FragmentItem();
+            FragmentItem fragmentItem = new FragmentItem();
             Bundle bundle = new Bundle();
-            bundle.putInt(ARG_POSITION ,position);
+            bundle.putInt(ARG_POSITION, position);
             fragmentItem.setArguments(bundle);
-            return  fragmentItem;
+            return fragmentItem;
         }
 
         private ImageView mImageView;
@@ -117,9 +121,9 @@ public class WelcomeFragment extends BaseFragment
         @Override
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
         {
-            View view = inflater.inflate(R.layout.fragment_welcom_item, container,false);
+            View view = inflater.inflate(R.layout.fragment_welcom_item, container, false);
             initView(view);
-            return  view;
+            return view;
         }
 
         private void initView(View view)
@@ -133,7 +137,7 @@ public class WelcomeFragment extends BaseFragment
         {
             super.onActivityCreated(savedInstanceState);
             mTvStart.setVisibility(View.GONE);
-            int postion = getArguments().getInt(ARG_POSITION,0);
+            int postion = getArguments().getInt(ARG_POSITION, 0);
             switch (postion)
             {
                 case 0:
@@ -155,11 +159,11 @@ public class WelcomeFragment extends BaseFragment
                         public void onClick(View v)
                         {
                             MainActivity.actionMain(mActivity);
+                            mActivity.getPreferences().edit().putBoolean(Pref.PREF_FIRST_RUN, false).commit();
                         }
                     });
                     break;
             }
-
 
         }
 
