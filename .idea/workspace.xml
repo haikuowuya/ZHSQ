@@ -41,37 +41,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="System.out" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13193f0c-46ac-4f2b-8fdb-6694877fc359" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_ad_banner.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/GameActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/SettingsActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/YuDingActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/adapter/kuaidi/KDCateGridAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/fragment/GameFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/fragment/SettingsFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/fragment/YuDingFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_game.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_yuding.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/grid_kd_cate_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/Pref.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/Pref.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/WelcomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/WelcomeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/adapter/menu/MenuRecyclerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/adapter/menu/MenuRecyclerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/base/BaseImageTitleActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/base/BaseImageTitleActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/fragment/KuaiDiFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/fragment/KuaiDiFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/fragment/MainFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/fragment/MainFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/fragment/MenuFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/fragment/MenuFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/fragment/WelcomeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/fragment/WelcomeFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/http/RequestUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/http/RequestUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/model/KDCateItem.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/model/KDCateItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_kuaidi.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_kuaidi.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/grid_main_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/grid_main_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/activity_fragment_strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/activity_fragment_strings.xml" />
-    </list>
+    <list default="true" id="13193f0c-46ac-4f2b-8fdb-6694877fc359" name="Default" comment="" />
     <ignored path="ZHSQ.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -172,8 +142,8 @@
       <file leaf-file-name="BaseImageTitleActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/base/BaseImageTitleActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63309354">
-              <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.23741007">
+              <caret line="29" column="104" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="e#1126#1273#0" expanded="true" />
                 <element signature="e#1272#1273#0" expanded="true" />
@@ -2327,7 +2297,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2345,7 +2315,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17377399" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17377399" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2894,8 +2864,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/haikuowuya/zhsq/base/BaseImageTitleActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63309354">
-          <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.23741007">
+          <caret line="29" column="104" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
             <element signature="e#1126#1273#0" expanded="true" />
             <element signature="e#1272#1273#0" expanded="true" />
